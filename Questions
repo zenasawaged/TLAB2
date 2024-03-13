@@ -1,0 +1,12 @@
+# i. Which insights did you gain from your EDA?
+I gained that there is a small quanitity of transactions marked Fraud, so I was hesitant to remove outliers as it was an outlier of the whole dataset. 
+In addition, I found a correlation between old balance and new balance, where it was marked fraud if the new balance was 0 and the old balance ranged between 
+0-1.5million. Lastly, I noticed there were two predominant types that were marked fraud- "the cash_out" and "transfer" types.
+# ii. How did you determine which columns to drop or keep? If your EDA informed this process, explain which insights you used to determine which columns were not needed.
+I droped column "ismarkedFlagged" because it was redundant and less accurate since it was a dummy or the true target variable "is Fraud". I also dropped the "nameDest" and "nameOrig" as it was determining a name but it was just a sequence of random numbers that had few duplications so it did not help determine any correlations with our target variable.
+# iii. Which hyperparameter tuning strategy did you use? Grid-search or random-search? Why?
+I did random-search since we had a large dataset that Grid-search wouldn't be able to compute.
+# iv. How did your model's performance change after discovering optimal hyperparameters?
+Since fine-tuning the model, it performed well on data as there was only a difference of .005 with 100% accuracy. Since the test accuracy is reasonably high and close to the train accuracy, it suggests that the model is performing well and generalizing effectively. 
+# v. What was your final F1 Score?
+F1 Score: 0.8539325842696629 to F1 Score: F1 Score: 0.8507462686567163
